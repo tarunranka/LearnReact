@@ -1,16 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-  <style>
-    .btn .caret {
-      margin-left: 5px;
-    }
-  </style>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react-dom.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
 </head>
 <body>
-  <div class="container">
-  </div>
+<div id="greeting-div"></div>
+<script type="text/babel">
+    var Greeting = React.createClass({
+      render: function() {
+        return (
+          <p>Hello, Universe</p>
+        )
+      }
+    });
+
+    ReactDOM.render(
+      <Greeting/>,
+      document.getElementById('greeting-div')
+    );
+  </script>
 </body>
-<script src="main.js"></script>
 </html>
