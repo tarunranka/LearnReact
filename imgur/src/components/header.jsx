@@ -1,24 +1,24 @@
 var React = require('react');
 var Router = require('react-router');
-var Reflux = require('reflux');
-var TopicStore = require('../stores/topic-store');
-var Action = require('../actions');
 var Link = Router.Link;
+var Actions = require('../actions');
+var TopicStore = require('../stores/topic-store');
+var Reflux = require('reflux');
 
 module.exports = React.createClass({
-  mixins:[
-    Reflux.listenTo(TopicStore,"onChange")
+    mixins:[
+        Reflux.listenTo(TopicStore,'onChange')
     ],
- getInitialState: function(){
-    return {
-        topics:[]
-    }
- },
- componentWillMount: function(){
-    Action.getTopics();
- },
+    getInitialState:function(){
+        return {
+            topics:[]
+        }
+    },
+    componentWillMount:function(){
+        Actions.getTopics();
+    },
   render: function() {
-    return <nav className="navbar navbar-default">
+    return <nav className="navbar navbar-default header">
         <div className="container-fluid">
             <Link to="/" className="navbar-brand">Brand</Link>
              <ul className="nav navbar-nav navbar-right">
@@ -28,13 +28,14 @@ module.exports = React.createClass({
     </nav>
   },
   renderTopics: function(){
-    this.state.topics.map(function(topic){
-        return <li key={topic.id}>
-            <Link to= {"topics/" + topic.id}>
+    return this.state.topics.slice(0,4).map(function(topic){
+         return <li key={topic.id}>
+            <Link activeClassName="active" to={"topics/" + topic.id}>
                 {topic.name}
             </Link>
         </li>
     });
+
   },
   onChange:function(event,topics){
       this.setState({
