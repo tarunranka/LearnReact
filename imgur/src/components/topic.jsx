@@ -19,12 +19,12 @@ module.exports = React.createClass({
         Actions.getImages(this.props.params.id);
     },
     componentWillReceiveProps:function(nextProps){
-        console.log(121212);
+
         Actions.getImages(nextProps.params.id);
     },
     render:function(){
-        return <div>
-        {this.renderImages}
+        return <div className="topic">
+        {this.renderImages()}
         </div>
     },
     renderImages:function(){

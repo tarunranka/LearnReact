@@ -1,0 +1,32 @@
+.image-preview {
+    display: inline-block;
+    position: relative;
+    .inset {
+        position: absolute;
+        bottom: 5px;
+        left: 0;
+        width: 100%;
+        background: white;
+        text-align: center;
+        opacity: 0.7;
+    }
+    .glyphicon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        font-size: 50px;
+        color: white;
+    }
+    img {
+        width: 200px;
+        height: 200px;
+        display: inline-block;
+    }
+    video {
+        width: 200px;
+        height: 200px;
+        vertical-align: middle;
+        background: black;
+    }
+}
