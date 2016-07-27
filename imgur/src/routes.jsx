@@ -5,10 +5,13 @@ var Router = ReactRouter.Router; // show content based on the url
 var Route = ReactRouter.Route; // config the route
 var Main = require('./components/main');
 var Topic = require('./components/topic');
+var ImageDetail = require('./components/image-detail');
+
 module.exports = (
     <Router>
         <Route path="/" component={Main}>
             <Route path="topics/:id" component={Topic} />
+            <Route path="images/:id" component={ImageDetail} />
         </Route>
     </Router>
 );
